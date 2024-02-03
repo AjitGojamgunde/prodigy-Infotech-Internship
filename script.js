@@ -1,42 +1,86 @@
-let weather = {
-    "apikey": WEATHER_API_KEY,
-    fetchWeather : function (city) {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
-        + city 
-        + "&units=metric&appid=" 
-        + this.apikey)
-        .then((Response) => Response.json())
-        .then((data) => this.displayWeather(data));
-    },
+const statusDisplay = document.querySelector('.game--status');
 
-    displayWeather: function(data) {
-        const { name } = data;
-        const { icon, description } = data.weather[0];
-        const { temp, humidity } = data.main;
-        const { speed } = data.wind;
-        document.querySelector(".city").innerText = "Weather in " + name;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
-        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h";
-        document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
-    },
+let gameActive = true;
+let currentPlayer = "X";
+let gameState = ["", "", "", "", "", "", "", "", ""];
 
-    search : function() {
-        this.fetchWeather(document.querySelector(".searchbar").value);
+const winningMessage = () => `Player ${currentPlayer} has won!`;
+const drawMessage = () => `Game ended in a draw!`;
+const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+
+statusDisplay.innerHTML = currentPlayerTurn();
+
+const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+function handleCellPlayed(clickedCell, clickedCellIndex) {
+    gameState[clickedCellIndex] = currentPlayer;
+    clickedCell.innerHTML = currentPlayer;
+}
+
+function handlePlayerChange() {
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    statusDisplay.innerHTML = currentPlayerTurn();
+}
+
+function handleResultValidation() {
+    let roundWon = false;
+    for(let i = 0; i <= 7; i++) {
+        const winCondition = winningConditions[i];
+        const a = gameState[winCondition[0]];
+        const b = gameState[winCondition[1]];
+        const c = gameState[winCondition[2]];
+        if(a === '' || b === '' || c === '')
+            continue;
+        if(a === b && b === c) {
+            roundWon = true;
+            break
+        }
     }
-};
 
-document.querySelector(".search button").addEventListener("click", function() {
-    weather.search();
-});
-
-document.querySelector(".searchbar").addEventListener("keyup", function(event){
-    if(event.key == "Enter"){
-        weather.search();
+    if(roundWon) {
+        statusDisplay.innerHTML = winningMessage();
+        gameActive = false;
+        return;
     }
-});
 
-weather.fetchWeather("durgapur");
+    const roundDraw = !gameState.includes("");
+    if(roundDraw) {
+        statusDisplay.innerHTML = drawMessage();
+        gameActive = false;
+        return;
+    }
+
+    handlePlayerChange();
+}
+
+function handleCellClick(clickedCellEvent) {
+    const clickedCell = clickedCellEvent.target;
+    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+
+    if(gameState[clickedCellIndex] !== "" || !gameActive)
+        return;
+
+    handleCellPlayed(clickedCell, clickedCellIndex);
+    handleResultValidation();
+}
+
+function handleRestartGame() {
+    gameActive = true;
+    currentPlayer = "X";
+    gameState = ["", "", "", "", "", "", "", "", ""];
+    statusDisplay.innerHTML = currentPlayerTurn();
+    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+}
+
+
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+document.querySelector('.game--restart').addEventListener('click', handleRestartGame);

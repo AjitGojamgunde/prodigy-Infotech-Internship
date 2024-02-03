@@ -1,98 +1,50 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: #222;
-    font-family: 'Open Sans', sans-serif;
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    font-size: 120%;
+    font-family: "Arial", sans-serif;
 }
 
-.card {
-    background: #000000d0;
-    color: whitesmoke;
-    padding: 2em;
-    border-radius: 30px;
-    width: 100%;
-    max-width: 420px;
-    margin: 1em;
+section {
+    text-align: center;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    margin: 1.7em;
-    border-radius: 50%;
-    border: none;
-    height: 45px;
-    width: 45px;
-    outline: none;
-    background: #7c7c7c2b;
-    color: whitesmoke;
+.cell {
+    font-family: "Permanent Marker", cursive;
+    width: 100px;
+    height: 100px;
+    box-shadow: 2px 2px 2px 2px #ecd7ba;
+    border: 2px solid #ecd7ba;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    line-height: 100px;
+    font-size: 60px;
 }
 
-input.searchbar {
-    border: none;
-    outline: none;
-    padding: 0.4em 1em;
-    border-radius: 24px;
-    background: #7c7c7c2b;
-    color: whitesmoke;
-    font-family: inherit;
-    font-size: 105%;
-    width: calc(100% - 100px);
+.game--title {
+    font-size: 100px;
+    color: #d7a62f;
+    margin: 10px auto;
 }
 
-button:hover {
-    background: white;
-    color: black;
+.game--container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+    margin: 10px auto;
+    background-color: #768294;
+    color: #04c0b2;
 }
 
-h1.temp {
-    margin: 0;
-    margin-bottom: 0.4em;
+.game--status {
+    font-size: 50px;
+    color: #d7a62f;
+    margin: 20px auto;
 }
 
-.flex {
-    display: flex;
-    align-items: center;
-}
-
-.description {
-    text-transform: capitalize;
-    margin-left: 8px;
-}
-
-.weather.loading {
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
-}
-
-.weather.loading:after{
-    visibility: visible;
-    content: "Loading....";
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 20px;
-}
-
-.card:hover {
-    box-shadow: 5px 5px 5px #00000056;
-}
-
-.searchbar:hover {
-    transform: scale(1.07);
+.game--restart {
+    background-color: #f7e4ac;
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    color: #5586e2;
+    box-shadow: 2px 2px 2px 2px #d86c23;
+    border: 2px solid #d86c23;
+    border-radius: 25px;
 }
