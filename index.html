@@ -1,320 +1,254 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap">
+    <title>Ajit Gojamgunde-Portfolio</title>
+</head>
+<body>
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-        <!--=============== REMIX ICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Responsive landing page headphones</title>
-    </head>
-    <body>
-        <!--=============== HEADER ===============-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">
-                    <img src="assets/img/logo.png" alt="">
-                </a>
-
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">Home</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#specs" class="nav__link">Specs</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#case" class="nav__link">Case</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#products" class="nav__link">Products</a>
-                        </li>
-                    </ul>
-
-                    <div class="nav__close" id="nav-close">
-                        <i class="ri-close-line"></i>
-                    </div>
+    <header id="nav-bar">
+        <div class="nav-bar">
+            <div class="brand">
+               
+            </div>
+            <div class="nav-list">
+                <div class="hamburger" onclick="toggleNav()">
+                    <div class="bar"></div>
                 </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-function-line"></i>
-                </div>
-            </nav>
-        </header>
-
-        <main class="main">
-            <!--=============== HOME ===============-->
-            <section class="home section" id="home">
-                <div class="home__container container grid">
-                    <div>
-                        <img src="assets/img/home.png" alt="" class="home__img">
-                    </div>
-                    
-                    <div class="home__data">
-                        <div class="home__header">
-                            <h1 class="home__title">On ear</h1>
-                            <h2 class="home__subtitle">Beats 3</h2>
-                        </div>
-
-                        <div class="home__footer">
-                            <h3 class="home__title-description">Overview</h3>
-                            <p class="home__description">Enjoy award-winning Beats sound with wireless listening freedom and a sleek, 
-                                streamlined design with comfortable padded earphones, delivering first-rate playback.
-                            </p>
-                            <a href="#" class="button button--flex">
-                                <span class="button--flex">
-                                    <i class="ri-shopping-bag-line button__icon"></i></i> Add to Bag
-                                </span>
-                                <span class="home__price">$299</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!--=============== SPONSOR ===============-->
-            <section class="sponsor section">
-                <div class="sponsor__container container grid">
-                    <img src="assets/img/sponsor1.png" alt="" class="sponsor__img">
-                    <img src="assets/img/sponsor2.png" alt="" class="sponsor__img">
-                    <img src="assets/img/sponsor3.png" alt="" class="sponsor__img">
-                    <img src="assets/img/sponsor4.png" alt="" class="sponsor__img">
-                </div>
-            </section>
-
-            <!--=============== SPECS ===============-->
-            <section class="specs section grid" id="specs">
-                <h2 class="section__title section__title-gradient">Specs</h2>
-
-                <div class="specs__container container grid">
-                    <div class="specs__content grid">
-                        <div class="specs__data">
-                            <i class="ri-bluetooth-line specs__icon"></i>
-                            <h3 class="specs__title">Connection</h3>
-                            <span class="specs__subtitle">Bluetooth v5.2</span>
-                        </div>
-    
-                        <div class="specs__data">
-                            <i class="ri-battery-charge-line specs__icon"></i>
-                            <h3 class="specs__title">Battery</h3>
-                            <span class="specs__subtitle">Duration 40h</span>
-                        </div>
-    
-                        <div class="specs__data">
-                            <i class="ri-plug-line specs__icon"></i>
-                            <h3 class="specs__title">Load</h3>
-                            <span class="specs__subtitle">Fast charge 4.2-AAC</span>
-                        </div>
-    
-                        <div class="specs__data">
-                            <i class="ri-mic-line specs__icon"></i>
-                            <h3 class="specs__title">Microphone</h3>
-                            <span class="specs__subtitle">Supports Apple Siri <br> and Google</span>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <img src="assets/img/specs.png" alt="" class="specs__img">
-                    </div>
-                </div>
-            </section>
-
-            <!--=============== CASE ===============-->
-            <section class="case section grid" id="case">
-                <h2 class="section__title section__title-gradient">Case</h2>
-
-                <div class="case__container container grid">
-                    <div>
-                        <img src="assets/img/case.png" alt="" class="case__img">
-                    </div>
-
-                    <div class="case__data">
-                        <p class="case__description">With a comfortable and adaptable case so that you can 
-                            store it whenever you want, and keep your durability forever.
-                        </p>
-                        <a href="#" class="button button--flex">
-                            <i class="ri-information-line button__icon"></i> More info
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!--=============== DISCOUNT ===============-->
-            <section class="discount section">
-                <div class="discount__container container grid">
-                    <div class="discount__animate">
-                        <h2 class="discount__title">Immerse yourself in <br> your music</h2>
-                        <p class="discount__description">Get it now, up to 50% off.</p>
-                        <a href="#" class="button button--flex">
-                            <i class="ri-shopping-bag-line button__icon"></i> Shop Now
-                        </a>
-                    </div>
-
-                    <img src="assets/img/discount.png" alt="" class="discount__img">
-                </div>
-            </section>
-
-            <!--=============== PRODUCTS ===============-->
-            <section class="products section" id="products">
-                <h2 class="section__title section__title-gradient products__line">
-                    Choose <br> Your Style
-                </h2>
-
-                <div class="products__container container grid">
-                    <article class="products__card">
-                        <div class="products__content">
-                            <img src="assets/img/product1.png" alt="" class="products__img">
-    
-                            <h3 class="products__title">Black</h3>
-                            <span class="products__price">$249</span>
-    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-                        </div>
-                    </article>
-                    <article class="products__card">
-                        <div class="products__content">
-                            <img src="assets/img/product2.png" alt="" class="products__img">
-    
-                            <h3 class="products__title">Red Black</h3>
-                            <span class="products__price">$249</span>
-    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-                        </div>
-                    </article>
-                    <article class="products__card">
-                        <div class="products__content">
-                            <img src="assets/img/product3.png" alt="" class="products__img">
-    
-                            <h3 class="products__title">Night Black</h3>
-                            <span class="products__price">$249</span>
-    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-                        </div>
-                    </article>
-                    <article class="products__card">
-                        <div class="products__content">
-                            <img src="assets/img/product4.png" alt="" class="products__img">
-    
-                            <h3 class="products__title">Blue</h3>
-                            <span class="products__price">$249</span>
-    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="products__card">
-                        <div class="products__content">
-                            <img src="assets/img/product5.png" alt="" class="products__img">
-    
-                            <h3 class="products__title">Twilight gray</h3>
-                            <span class="products__price">$249</span>
-    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-
-        <!--=============== FOOTER ===============-->
-        <footer class="footer section">
-            <div class="footer__container container grid">
-                <a href="#" class="footer__logo">
-                    <img src="assets/img/logo.png" alt="">
-                </a>
-    
-                <div class="footer__content">
-                    <h3 class="footer__title">Products</h3>
-    
-                    <ul class="footer__links">
-                        <li>
-                            <a href="#" class="footer__link">Headphones</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Earphones</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Earbuds</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Accesories</a>
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="footer__content">
-                    <h3 class="footer__title">Support</h3>
-    
-                    <ul class="footer__links">
-                        <li>
-                            <a href="#" class="footer__link">Product help</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Register</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Updates</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Provides</a>
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="footer__content">
-                    <form action="" class="footer__form">
-                        <input type="email" placeholder="Email" class="footer__input">
-                        <button class="button button--flex">
-                            <i class="ri-send-plane-line button__icon"></i> Subscribe
-                        </button>
-                    </form>
-    
-                    <div class="footer__social">
-                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
-                            <i class="ri-facebook-fill"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
-                            <i class="ri-twitter-line"></i>
-                        </a>
-                    </div>
+                <div class="navigation" id="myNavigation">
+                    <nav>
+                        <ul>
+                            <li><a href="#hero" onclick="closeNav()">Home</a></li>
+                            <li><a href="#about" onclick="closeNav()">About</a></li>
+                            <li><a href="#services" onclick="closeNav()">Services</a></li>
+                            <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+                            <li><a href="#resume" onclick="closeNav()">My Resume</a></li>
+                            <li><a href="#contact" onclick="closeNav()">Contact Me</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
+        </div>
+    </header>
+    
+    <!--------------------------------------- Hero Section -------------------------------------->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-info">
+                <h1 class="hero-info-heading">Ajit Gojamgunde</h1>
+                <p class="hero-info-subheading">Web Developer💻</p>
+                <a href="#contact" class="hero-info-button">Contact Me</a>
+            </div>
+        </div>
+    </section>
+    
 
-            <p class="footer__copy">
-                <a href="https://www.youtube.com/c/Bedimcode/" target="_blank" class="footer__copy-link">&#169; Bedimcode. All right reserved</a>
-            </p>
-        </footer>
 
-        <!--=============== SCROLL UP ===============-->
-        <a href="#" class="scrollup" id="scroll-up">
-            <i class="ri-arrow-up-s-line scrollup__icon"></i>
+    <!----------------------------------------- About Section -------------------------------------------->
+    <section class="about" id="about">
+        <div class="about-info">
+            <h2 class="about-info-heading">About Me</h2>
+            <p class="about-info-desc">Passionate web and front-end developer with a keen eye for design and a knack for creating immersive user experiences. Proficient in HTML, CSS, and JavaScript, I specialize in crafting responsive and visually appealing websites. Explore my portfolio to see how I bring ideas to life through clean code, innovative design, and seamless interactivity..</p>
+            <a href="#" class="about-info-button">Read More</a>
+        </div>
+        <div class="about-img">
+            <div class="about-img-wrapper">
+                <img src="images/profile.jpg.jpg" alt="About Image">
+            </div>
+        </div>
+    </section>
+    
+<!----------------------------------------------- Services Section ------------------------------------------>
+<section class="services" id="services">
+    <div class="services-header">
+        <h2 class="services-header-heading">My Services</h2>
+    </div>
+    <div class="services-info">
+        <div class="service">
+            <div class="service-card">
+                <div class="service-front">
+                    <i class="fas fa-code"></i>
+                    <h3 class="service-front-heading">Web Development</h3>
+                </div>
+                <div class="service-back">
+                    <h3 class="service-back-heading">Web Development</h3>
+                    <p class="service-back-desc">I specialize in creating responsive and dynamic websites using the latest technologies.</p>
+                </div>
+            </div>
+        </div>
+
+
+       
+        <div class="service">
+            <div class="service-card">
+                <div class="service-front">
+                    <i class="fas fa-cogs"></i>
+                    <h3 class="service-front-heading">Custom Software Development</h3>
+                </div>
+                <div class="service-back">
+                    <h3 class="service-back-heading">Custom Software Development</h3>
+                    <p class="service-back-desc">We provide custom software development tailored to your business needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-card">
+                <div class="service-front">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3 class="service-front-heading">Mobile App Development</h3>
+                </div>
+                <div class="service-back">
+                    <h3 class="service-back-heading">Mobile App Development</h3>
+                    <p class="service-back-desc">Building innovative and user-friendly mobile applications.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-card">
+                <div class="service-front">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3 class="service-front-heading">UI/UX Design</h3>
+                </div>
+                <div class="service-back">
+                    <h3 class="service-back-heading">UI/UX Design</h3>
+                    <p class="service-back-desc">Crafting intuitive and visually appealing user interfaces and experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!------------------------------------------------ Projects Section ----------------------------------------->
+<section id="projects">
+    <h2 class="section-heading">Projects</h2>
+    <div class="projects-container">
+        <a href="https://github.com/AjitGojamgunde/prodigy-Internship/commits?author=AjitGojamgunde" class="project-link">
+            <div class="project-box">
+                <h3>Stop-Watch-Web-Application</h3>
+                <p class="project-details">I have made stop watch web apllicatio using HTML CSS and JS.This project not only underscores my technical skills in web development but also demonstrates my ability to create interactive and user-friendly web applications. I take pride in contributing to a practical and functional project that showcases my dedication to advancing my web development expertise </p>
+                <div class="project-info">
+                    <p class="technologies">Java, CSS, HTML, PHP, MySQL</p>
+                    <p class="views">
+                        <i class="fas fa-eye"></i>1000
+                    </p>
+                    <p class="file-size">2 MB</p>
+                </div>
+            </div>
         </a>
-        
-        <!--=============== SCROLL REVEAL ===============-->
-        <script src="https://unpkg.com/scrollreveal"></script>
 
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
+
+        <a href="https://github.com/AjitGojamgunde/prodigy-Internship/commits?author=AjitGojamgunde" class="project-link">
+            <div class="project-box">
+                <h3>Tic-Toc-Toe-Web-Game</h3>
+                <p class="project-details">I have made stop watch web apllicatio using HTML CSS and JS.This project not only underscores my technical skills in web development but also demonstrates my ability to create interactive and user-friendly web applications. I take pride in contributing to a practical and functional project that showcases my dedication to advancing my web development expertise </p>
+                <div class="project-info">
+                    <p class="technologies">Java, CSS, HTML, PHP, MySQL</p>
+                    <p class="views">
+                        <i class="fas fa-eye"></i>1000
+                    </p>
+                    <p class="file-size">2 MB</p>
+                </div>
+            </div>
+        </a>
+
+        
+        <a href="https://github.com/AjitGojamgunde/prodigy-Internship/commits?author=AjitGojamgunde" class="project-link">
+            <div class="project-box">
+                <h3>Portfolio Website</h3>
+                <p class="project-details">  I designed and implemented a dynamic poftfolio website using HTML, CSS, and JavaScript. This project not only underscores my technical skills in web development but also demonstrates my ability to create interactive and user-friendly web applications. I take pride in contributing to a practical and functional project that showcases my dedication to advancing my web development expertise.</p>
+                <div class="project-info">
+                    <p class="technologies">JavaScript, HTML, CSS</p>
+                    <p class="views">
+                        <i class="fas fa-eye"></i>1500
+                    </p>
+                    <p class="file-size">3 MB</p>
+                </div>
+            </div>
+        </a>
+
+        
+        <a href="https://github.com/AjitGojamgunde/prodigy-Internship/commits?author=AjitGojamgunde" class="project-link">
+            <div class="project-box">
+                <h3>Landing Web Page</h3>
+                <p class="project-details">I created a dynamic landing page for Internship, balancing a clean design with user-friendly elements. It includes a concise header, engaging hero section, toggleable about segment, and showcases the team, projects, and services. The achievements section adds credibility, and a responsive design ensures a polished user experience. This project reflects my skills in web development and UI/UX design.</p>
+                <div class="project-info">
+                    <p class="technologies">Java, CSS, HTML(UI/UX design)</p>
+                    <p class="views">
+                        <i class="fas fa-eye"></i>100
+                    </p>
+                    <p class="file-size">2.4 MB</p>
+                </div>
+            </div>
+        </a>
+
+       
+        <a href="https://github.com/AjitGojamgunde/prodigy-Internship/commits?author=AjitGojamgunde" class="project-link">
+            <div class="project-box">
+                <h3> Weather Application</h3>
+                <p class="project-details">The  Weather Search is to offer users a quick and reliable way to access up-to-date weather details. By utilizing the OpenWeatherMap API, the application fetches comprehensive weather data based on user input, presenting it in a visually appealing and informative manner. This project aims to enhance user experience in obtaining weather information while demonstrating practical web development skills.</p>
+                <div class="project-info">
+                    <p class="technologies">JavaScript, HTML, CSS</p>
+                    <p class="views">
+                        <i class="fas fa-eye"></i>721
+                    </p>
+                    <p class="file-size">3 MB</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+
+    <!---------------------------------------------- Hire Section ----------------------------------------->
+    <section class="hire">
+        <div class="hire-heading">Ready to start your project?</div>
+        <a href="#" class="hire-button">Hire Me</a>
+    </section>
+
+
+
+
+    <!------------------------------------------------ Resume Section --------------------------------------->
+<section id="resume">
+    <h2>Resume</h2>
+    <p>Download my <a href="https://drive.google.com/file/d/1iH7Jbaefs7JvCoGL0o7bmxMzu-P_AD1P/view?usp=sharing" target="_blank">Resume</a>.</p>
+</section> 
+
+<!-------------------------------------------------- Contact Section -------------------------------------------->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
+
+  
+
+    <div class="contact-info">
+        <p>Email: ajitgojamgunde143@gmail.com</p>
+        <p>Mobile No: 9766762801</p>
+        <p>Address: pune,Maharashtra</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 . All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="portfolio-web-/rdxitsed-for2.js"></script>
+
+</body>
 </html>
